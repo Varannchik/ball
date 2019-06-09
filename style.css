@@ -1,0 +1,14 @@
+.container {
+  max-width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(#ffdd00 0%, #91e842 100%);
+}
+/*# sourceMappingURL=style.css.map */
