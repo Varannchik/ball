@@ -21,11 +21,9 @@ function mouseDown(e){
 
 function mouseUp(){
     console.log('end');   
-    ball.removeEventListener('mousemove',move(e){
-        move(e); 
-    }); 
-    //ball.removeEventListener('mousedown', mouseDown);    
-    ball.removeEventListener('mouseup', mouseUp);
+    ball.removeEventListener('mousemove');
+    ball.removeEventListener('mousedown', mouseDown);   
+   
 }
 
 
