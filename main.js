@@ -4,7 +4,7 @@ ball.addEventListener('mousedown', mouseDown);
 ball.addEventListener('mouseup', mouseUp);
 
 function mouseDown(e){
-    console.log('start');
+    
     ball.style.position = 'absolute';
     move(e);  
     ball.style.zIndex = 1000;
@@ -20,7 +20,12 @@ function mouseDown(e){
 } 
 
 function mouseUp(){
-    console.log('end');    
+    console.log('end');   
+    ball.removeEventListener('mousemove',move(e){
+        move(e); 
+    }); 
+    //ball.removeEventListener('mousedown', mouseDown);    
+    ball.removeEventListener('mouseup', mouseUp);
 }
 
 
