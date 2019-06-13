@@ -9,10 +9,6 @@ let widthSq=0;
 let higSQ=0;
 
 ball.addEventListener('mousedown', mouseDown);
-ball.addEventListener('mousemove',function(e){
-    move(e); 
-    console.log('move');
-});
 ball.addEventListener('mouseup', mouseUp);
 
 function mouseDown(e){ 
@@ -21,7 +17,10 @@ function mouseDown(e){
     sqSizeY = sqCord.top ;
     sqSizeX = sqCord.left;
     widthSq = sqCord.bottom; 
-    higSQ = sqCord.right;
+    higSQ = sqCord.right; 
+    ball.addEventListener('mousemove',move);       
+    console.log('move');
+    
 }
 function move(e) {
     let a=e.clientX - ball.offsetWidth / 2 ;
@@ -41,8 +40,7 @@ function move(e) {
 }
 function mouseUp(){
     console.log('end');   
-    ball.removeEventListener('mousemove', move);
-    ball.removeEventListener('mousedown', mouseDown);    
+    ball.removeEventListener('mousemove', move, false);
 }
 
 
