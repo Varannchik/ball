@@ -19,10 +19,11 @@ function mouseDown(e){
     widthSq = sqCord.bottom; 
     higSQ = sqCord.right;   
     
-    move(e);
     ball.addEventListener('mousemove',function(e){
         move(e); 
-    });    
+        console.log('move');
+    }); 
+       
 }
 
 function move(e) {
