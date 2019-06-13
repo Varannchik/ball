@@ -9,6 +9,10 @@ let widthSq=0;
 let higSQ=0;
 
 ball.addEventListener('mousedown', mouseDown);
+ball.addEventListener('mousemove',function(e){
+    move(e); 
+    console.log('move');
+});
 ball.addEventListener('mouseup', mouseUp);
 
 function mouseDown(e){ 
@@ -17,39 +21,28 @@ function mouseDown(e){
     sqSizeY = sqCord.top ;
     sqSizeX = sqCord.left;
     widthSq = sqCord.bottom; 
-    higSQ = sqCord.right;   
-    
-    ball.addEventListener('mousemove',function(e){
-        move(e); 
-        console.log('move');
-    }); 
-       
+    higSQ = sqCord.right;
 }
-
 function move(e) {
     let a=e.clientX - ball.offsetWidth / 2 ;
     let b=e.clientY - ball.offsetHeight / 2;
-
     if(a<=sqSizeX || a>=higSQ-ball.offsetHeight){
         ball.style.left==sqSizeX + 'px';
     } else{
         a=e.clientX - ball.offsetWidth / 2 ;        
         ball.style.left = a + 'px';
-    }
-    
+    }    
     if(b<=sqSizeY || b>=widthSq-ball.offsetWidth){
         ball.style.top==sqSizeY + 'px';
     } else{
         b= e.clientY - ball.offsetHeight / 2;       
         ball.style.top = b + 'px';        
-    }   
-    
+    }     
 }
-
 function mouseUp(){
     console.log('end');   
     ball.removeEventListener('mousemove', move);
-    ball.removeEventListener('mousedown', mouseDown); 
+    ball.removeEventListener('mousedown', mouseDown);    
 }
 
 
